@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead QA - Визитка</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Контейнер для вкладок -->
+    <div class="tab-container">
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'about')">Обо мне</button>
+            <button class="tab-button" onclick="openTab(event, 'skills')">Навыки</button>
+            <button class="tab-button" onclick="openTab(event, 'achievements')">Достижения</button>
+        </div>
+        
+        <!-- Содержимое вкладок -->
+        <div id="about" class="tab-content active">
+            <h2>Обо мне</h2>
+            <p>Привет! Меня зовут Андрей и я Lead QA с 10 годами опыта в тестировании и управлении QA-процессами.</p>
+            <p>Работал в различных командах, помогая создавать качественные продукты, обеспечивая полный цикл тестирования и внедряя лучшие практики.</p>
+        </div>
+        
+        <div id="skills" class="tab-content">
+            <h2>Навыки</h2>
+            <ul>
+                <li><strong>Инструменты автоматизации:</strong> Selenium, JMeter, Postman и другие</li>
+                <li><strong>Навыки языков программирования:</strong> Python, JavaScript</li>
+                <li><strong>Управление тестами:</strong> Jira, Test-IT</li>
+                <li><strong>Методы тестирования:</strong> функциональное и нефункциональное</li>
+                <li><strong>Soft-Skills:</strong> коммуникация, лидерство, тайм-менеджмент, кризис-менеджмент, управление компетенциями, коучинг</li>
+            </ul>
+        </div>
+        
+        <div id="achievements" class="tab-content">
+            <h2>Мои достижения</h2>
+            <ul>
+                <li>Внедрил процессы тестирования с нуля для нескольких проектов.</li>
+                <li>Оптимизировал процесс тестирования, сократив время на проверку на 30%.</li>
+                <li>Руководил командой QA для успешного запуска крупных проектов.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Футер с контактами -->
+    <footer>
+        <p>Свяжитесь со мной: <a href="mailto:exbl4d3@yandex.ru">Email</a></p>
+        <p><a href="https://www.linkedin.com">LinkedIn</a> | <a href="https://github.com/asblv">GitHub</a></p>
+    </footer>
+
+    <script>
+        // Функция для переключения вкладок
+        function openTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            const tabButtons = document.getElementsByClassName("tab-button");
+
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Показать первую вкладку по умолчанию
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("about").style.display = "block";
+        });
+    </script>
+</body>
+</html>
